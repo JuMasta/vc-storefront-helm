@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "VirtoCommerce-StoreFront.fullname" . }}-test-connection"
+  labels:
+    {{- include "VirtoCommerce-StoreFront.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "VirtoCommerce-StoreFront.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
