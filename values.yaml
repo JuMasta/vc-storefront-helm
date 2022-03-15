@@ -8,7 +8,7 @@ image:
   repository: ghcr.io/virtocommerce/storefront
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "dev-linux-latest"
+  tag: "5.9.0-alpha.819-dev-876e69fa"
 
 imagePullSecrets: []
 nameOverride: ""
